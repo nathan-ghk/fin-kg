@@ -84,6 +84,59 @@ def scraper(base_url: str, symbol: str):
     finally:
         driver.quit()
 
+def dict_to_df(results_agg: dict):
+    # 1. set up a list to store data in a dictionary of {indicator: value}
+    all_rows = []
+    for code, data_list in results_agg.items():
+        # convert to a dictionary of {indicator: value}
+        row_dict = {item['지표']: item['값'] for item in data_list}
+        row_dict['symbol'] = code
+        all_rows.append(row_dict)
+
+    # 2. convert to a dataframe
+    df = pd.DataFrame(all_rows)
+
+    # 3. move symbol column to the first column
+    if 'symbol' in df.columns:
+        cols = ['symbol'] + [c for c in df.columns if c != 'symbol']
+        df = df[cols]
+
+    # 4. redefine columns
+    df.columns = ['symbol'
+                ,'bm_index' # benchmark index   
+                ,'lst_date' # listing date
+                ,'am_company'  # asset management company
+                ,'mkt_capital' # market capitalization
+                ,'aum'  # Leveraged Assets Under Management 
+                ,'leverage' # leverage
+                ,'nav' # Net Asset Value
+                ,'dsc_rate' # Discrepancy Rate
+                ,'tot_expense' # Total Expense Ratio
+                ,'trk_error' # Tracking Error
+                ,'stt' # Securities Transaction Tax (STT)
+                ,'cgt' # Capital gains tax
+                ,'dvt' # Dividend Tax
+                ]
+
+    return df
+
+def dictli_to_df(table_results_agg: dict):
+    # 1. set up a dict to store data in a data frame
+    df = pd.DataFrame()
+    # 2. convert to a dataframe
+    for code, data_list in table_results_agg.items():
+        _df = pd.DataFrame(data_list)
+        _df['symbol'] = code
+        df = pd.concat([df, _df])
+    # 3. redefine columns
+    df.columns = ['stock_nm', 'stock_qty', 'stock_weight', 'stock_price', 'stock_change', 'symbol']
+    # 4. move symbol column to the first column
+    if 'symbol' in df.columns:
+        cols = ['symbol'] + [c for c in df.columns if c != 'symbol']
+        df = df[cols]    
+    return df
+
+
 if __name__ == "__main__":
     base_url = 'https://stock.naver.com/domestic/stock/'
     etf_master = masterETF()
@@ -93,11 +146,20 @@ if __name__ == "__main__":
     results_agg = dict()
     table_results_agg = dict()
 
-    for symbol in symbols:
-        print(symbol)
-        results, table_results = scraper(base_url, symbol)
-        results_agg[symbol] = results
-        table_results_agg[symbol] = table_results
+    try: 
+        for symbol in symbols:
+            print(symbol)
+            results, table_results = scraper(base_url, symbol)
+            results_agg[symbol] = results
+            table_results_agg[symbol] = table_results
+    except:
+        pass
 
-    print(results_agg)
-    print(table_results_agg)
+    print('DEBUG : Complteted to collect data')
+
+    df = dict_to_df(results_agg)
+    df.to_csv('results_agg.csv', encoding='utf-8', index=False)
+    print(f'DEBUG : {len(df)} rows in results_agg.csv')
+    tbl = dictli_to_df(table_results_agg)
+    print(f'DEBUG : {len(tbl)} rows in table_results_agg.csv')
+    tbl.to_csv('table_results_agg.csv', encoding='utf-8', index=False)

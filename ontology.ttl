@@ -1,0 +1,71 @@
+@prefix ex: <http://ghk.com/ontology/etf#> .
+@prefix mod: <https://w3id.org/mod#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ex: a owl:Ontology ;
+    mod:createdWith <https://chowlk.linkeddata.es/> .
+
+ex:companyName a owl:ObjectProperty ;
+    rdfs:label "company name" ;
+    rdfs:domain ex:AssetManager ;
+    rdfs:range xsd:string .
+
+ex:hasConstituent a owl:ObjectProperty ;
+    rdfs:label "has constituent" ;
+    rdfs:domain ex:ETF ;
+    rdfs:range ex:Stock .
+
+ex:indexName a owl:ObjectProperty ;
+    rdfs:label "index name" ;
+    rdfs:domain ex:Index ;
+    rdfs:range xsd:string .
+
+ex:listingDate a owl:ObjectProperty ;
+    rdfs:label "listing date" ;
+    rdfs:domain ex:ETF ;
+    rdfs:range xsd:date .
+
+ex:managedBy a owl:ObjectProperty ;
+    rdfs:label "managed by" ;
+    rdfs:domain ex:AssetManager .
+
+ex:stockName a owl:ObjectProperty ;
+    rdfs:label "stock name" ;
+    rdfs:domain ex:Stock ;
+    rdfs:range xsd:string .
+
+ex:ticker a owl:ObjectProperty ;
+    rdfs:label "ticker" ;
+    rdfs:domain ex:Stock ;
+    rdfs:range xsd:string .
+
+ex:tickerSymbol a owl:ObjectProperty ;
+    rdfs:label "ticker symbol" ;
+    rdfs:domain ex:ETF ;
+    rdfs:range xsd:string .
+
+ex:tracks a owl:ObjectProperty ;
+    rdfs:label "tracks" ;
+    rdfs:domain ex:ETF ;
+    rdfs:range ex:Index .
+
+xsd:date a owl:Class ;
+    rdfs:label "date" .
+
+ex:AssetManager a owl:Class ;
+    rdfs:label "Asset Manager" .
+
+ex:Index a owl:Class ;
+    rdfs:label "Index" .
+
+ex:Stock a owl:Class ;
+    rdfs:label "Stock" .
+
+ex:ETF a owl:Class ;
+    rdfs:label "E T F" .
+
+xsd:string a owl:Class ;
+    rdfs:label "string" .
+
