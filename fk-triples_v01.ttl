@@ -1,0 +1,80 @@
+@base <http://ghk.com/ontology/etf#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix etf: <http://ghk.com/ontology/etf#> .
+@prefix etf-data: <http://ghk.com/data/etf#> .
+
+etf-data:360750 a etf:ETF;
+  etf:listingDate "2020-08-07";
+  etf:tracks etf-data:S%26P%20500;
+  etf:managedBy etf-data:미래에셋자산운용%28주%29;
+  etf:hasConstituent etf-data:엔비디아, etf-data:애플, etf-data:마이크로소프트, etf-data:아마존닷컴, etf-data:알파벳%20Class%20A,
+    etf-data:브로드컴, etf-data:알파벳%20Class%20C, etf-data:메타, etf-data:테슬라, etf-data:버크셔%20해서웨이%20Class%20B .
+
+etf-data:396500 a etf:ETF;
+  etf:listingDate "2021-08-10";
+  etf:tracks etf-data:FnGuide%20반도체TOP10%20지수;
+  etf:managedBy etf-data:미래에셋자산운용%28주%29;
+  etf:hasConstituent etf-data:SK하이닉스, etf-data:삼성전자, etf-data:한미반도체, etf-data:리노공업,
+    etf-data:DB하이텍, etf-data:원익IPS, etf-data:이오테크닉스, etf-data:HPSP, etf-data:ISC, etf-data:솔브레인 .
+
+etf-data:102110 a etf:ETF;
+  etf:listingDate "2008-04-03";
+  etf:tracks etf-data:코스피%20200;
+  etf:managedBy etf-data:미래에셋자산운용%28주%29;
+  etf:hasConstituent etf-data:삼성전자, etf-data:SK하이닉스, etf-data:SK스퀘어, etf-data:현대차, etf-data:두산에너빌리티,
+    etf-data:KB금융, etf-data:삼성전기, etf-data:삼성물산, etf-data:한화에어로스페이스, etf-data:기아 .
+
+etf-data:133690 a etf:ETF;
+  etf:listingDate "2010-10-18";
+  etf:tracks etf-data:NASDAQ%20100;
+  etf:managedBy etf-data:미래에셋자산운용%28주%29;
+  etf:hasConstituent etf-data:엔비디아, etf-data:애플, etf-data:마이크로소프트, etf-data:아마존닷컴, etf-data:알파벳%20Class%20A,
+    etf-data:마이크론%20테크놀로지, etf-data:알파벳%20Class%20C, etf-data:테슬라, etf-data:AMD%28어드밴스드%20마이크로%20디바이시스%29,
+    etf-data:브로드컴 .
+
+etf-data:379800 a etf:ETF;
+  etf:listingDate "2021-04-09";
+  etf:tracks etf-data:S%26P%20500%20Total%20Return%20Index;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:엔비디아, etf-data:애플, etf-data:마이크로소프트, etf-data:아마존닷컴, etf-data:알파벳%20Class%20A,
+    etf-data:브로드컴, etf-data:알파벳%20Class%20C, etf-data:메타, etf-data:테슬라, etf-data:버크셔%20해서웨이%20Class%20B .
+
+etf-data:122630 a etf:ETF;
+  etf:listingDate "2010-02-22";
+  etf:tracks etf-data:코스피%20200%20레버리지지수;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:2026-06%20코스피200지수선물, etf-data:KODEX%20200, etf-data:삼성전자,
+    etf-data:SK하이닉스, etf-data:KODEX%20200TR, etf-data:원화현금, etf-data:SK스퀘어, etf-data:PLUS%20200,
+    etf-data:현대차, etf-data:두산에너빌리티 .
+
+etf-data:278530 a etf:ETF;
+  etf:listingDate "2017-11-21";
+  etf:tracks etf-data:코스피%20200%20TR지수;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:삼성전자, etf-data:SK하이닉스, etf-data:SK스퀘어, etf-data:현대차, etf-data:두산에너빌리티,
+    etf-data:KB금융, etf-data:삼성전기, etf-data:삼성물산, etf-data:한화에어로스페이스, etf-data:기아 .
+
+etf-data:069500 a etf:ETF;
+  etf:listingDate "2002-10-14";
+  etf:tracks etf-data:코스피%20200;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:SK하이닉스, etf-data:SK스퀘어, etf-data:현대차, etf-data:두산에너빌리티,
+    etf-data:KB금융, etf-data:삼성전기, etf-data:삼성물산, etf-data:한화에어로스페이스, etf-data:기아, etf-data:삼성전자 .
+
+etf-data:459580 a etf:ETF;
+  etf:listingDate "2023-06-08";
+  etf:tracks etf-data:KAP%20양도성예금증서%28CD%29금리지수%28총수익지수%29;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:원화현금, etf-data:KODEX%20머니마켓액티브, etf-data:스왑%28하나금융투자%29,
+    etf-data:스왑%28삼성증권%29, etf-data:KODEX%2026-12%20금융채%28AA-이상%29액티브, etf-data:물가01625-3206%2822-6%29,
+    etf-data:스왑%28유안타증권%29, etf-data:국고03250-5403%2824-2%29, etf-data:국고02875-4409%2824-10%29,
+    etf-data:국고03375-3103%2826-3%29 .
+
+etf-data:379810 a etf:ETF;
+  etf:listingDate "2021-04-09";
+  etf:tracks etf-data:NASDAQ-100%20Total%20Return%20Index;
+  etf:managedBy etf-data:삼성자산운용%28주%29;
+  etf:hasConstituent etf-data:엔비디아, etf-data:애플, etf-data:마이크로소프트, etf-data:아마존닷컴, etf-data:알파벳%20Class%20A,
+    etf-data:마이크론%20테크놀로지, etf-data:알파벳%20Class%20C, etf-data:테슬라, etf-data:AMD%28어드밴스드%20마이크로%20디바이시스%29,
+    etf-data:브로드컴 .
